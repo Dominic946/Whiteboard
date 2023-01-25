@@ -19,7 +19,9 @@
       }
       .menu button {
         font-size: 18px;
+        cursor: pointer;
       }
+
       </style>
 </head>
 
@@ -29,24 +31,36 @@
     <div class="menu">
       <table><tr>
         <!-- All the color buttons at the top -->
-        <td><button id="red" style="background-color:red">Red</button></td>
-        <td><button id="orange" style="background-color:orange">Orange</button></td>
-        <td><button id="yellow" style="background-color:yellow">Yellow</button></td>
-        <td><button id="green" style="background-color:limegreen">Green</button></td>
-        <td><button id="aqua" style="background-color:aqua">Aqua</button></td>
-        <td><button id="blue" style="color:white; background-color:blue">Blue</button></td>
-        <td><button id="purple" style="color:white; background-color:purple">Purple</button></td>
-        <td><button id="pink" style="background-color:hotpink">Pink</button></td>
-        <td><button id="brown" style="color:white; background-color:brown">Brown</button></td>
-        <td><button id="black" style="color:white; background-color:black">Black</button></td>
-        <td><button id="white" style="background-color:white">White</button></td>
+        <td><button id="red" style="background-color:red" onclick="changeColor()">
+          Red</button></td>
+        <td><button id="orange" style="background-color:orange" onclick="changeColor()">
+          Orange</button></td>
+        <td><button id="yellow" style="background-color:yellow" onclick="changeColor()">
+          Yellow</button></td>
+        <td><button id="limegreen" style="background-color:limegreen" onclick="changeColor()">
+          Green</button></td>
+        <td><button id="aqua" style="background-color:aqua" onclick="changeColor()">
+          Aqua</button></td>
+        <td><button id="blue" style="color:white; background-color:blue" onclick="changeColor()">
+          Blue</button></td>
+        <td><button id="purple" style="color:white; background-color:purple" onclick="changeColor()">
+          Purple</button></td>
+        <td><button id="hotpink" style="background-color:hotpink" onclick="changeColor()">
+          Pink</button></td>
+        <td><button id="brown" style="color:white; background-color:brown" onclick="changeColor()">
+          Brown</button></td>
+        <td><button id="black" style="color:white; background-color:black" onclick="changeColor()">
+          Black</button></td>
+        <td><button id="white" style="background-color:white" onclick="changeColor()">
+          White</button></td>
 
         <!-- Other buttons -->
         <td>
           <label for="size">Pen size:</label>
-          <input type="number" id="size" min="1" max="300" value="3" width="3">
+          <input type="number" id="penSize" min="1" max="300" value="2" width="3">
         </td>
-        <td><button id="clear">Clear</button></td>
+        <td><button id="clear" onclick="reset()">Clear</button></td>
+
       </tr></table>
     </div>
     <canvas id="drawing-canvas"></canvas>

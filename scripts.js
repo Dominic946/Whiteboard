@@ -1,6 +1,8 @@
 // Variables for the canvas and context
 var canvas;
 var context;
+var color;
+var penSize;
 
 // Flag for drawing activity
 var drawing = false;
@@ -18,14 +20,21 @@ function init() {
     canvas.addEventListener("mousedown", startDrawing);
     canvas.addEventListener("mousemove", draw);
     canvas.addEventListener("mouseup", stopDrawing);
+    canvas.addEventListener("mouseout", stopDrawing);
 
-    // Add event listeners for window resize
-    window.addEventListener("resize", resizeCanvas);
+    // Set default color and size
+    penSize = 2;
+    color = "black";
 }
 
 function startDrawing(event) {
+
+
     // Set the drawing flag
     drawing = true;
+
+    // Get the pen penSize
+    penSize = document.getElementById("penSize").value;
 
     // Start a new path
     context.beginPath();
@@ -40,8 +49,8 @@ function draw(event) {
         context.lineTo(event.clientX, event.clientY);
 
         // Set the line width and color
-        context.lineWidth = 2;
-        context.strokeStyle = "black";
+        context.lineWidth = penSize;
+        context.strokeStyle = color;
 
         // Draw the path
         context.stroke();
@@ -53,7 +62,14 @@ function stopDrawing() {
     drawing = false;
 }
 
-function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+function changeColor() {
+  color = event.target.id;
+}
+
+function reset() {
+  // Set the canvas dimensions to the size of the window
+  if(confirm("Erase all?")){
+    canvas.width = window.innerWidth-16;
+    canvas.height = window.innerHeight-55;
+  }
 }
