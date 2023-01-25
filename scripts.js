@@ -11,8 +11,8 @@ function init() {
     context = canvas.getContext("2d");
 
     // Set the canvas dimensions to the size of the window
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth-16;
+    canvas.height = window.innerHeight-55;
 
     // Add event listeners for mouse events
     canvas.addEventListener("mousedown", startDrawing);
