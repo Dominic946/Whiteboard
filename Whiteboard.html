@@ -14,6 +14,9 @@
         width: 100%;
         table-layout: fixed;
       }
+      .menu table td {
+        text-align: center;
+      }
       </style>
 </head>
 
@@ -22,6 +25,7 @@
 <body onload="init()" style="background-color:gray">
     <div class="menu">
       <table><tr>
+        <!-- All the buttons at the top, one button per color -->
         <td><button id="red" style="background-color:red">Red</button></td>
         <td><button id="orange" style="background-color:orange">Orange</button></td>
         <td><button id="yellow" style="background-color:yellow">Yellow</button></td>
@@ -29,6 +33,11 @@
         <td><button id="green" style="color:white; background-color:green">green</button></td>
         <td><button id="lightblue" style="background-color:lightblue">Light Blue</button></td>
         <td><button id="blue" style="color:white; background-color:blue">Blue</button></td>
+        <td><button id="purple" style="color:white; background-color:purple">Purple</button></td>
+        <td><button id="pink" style="background-color:pink">Pink</button></td>
+        <td><button id="brown" style="color:white; background-color:brown">Brown</button></td>
+        <td><button id="black" style="color:white; background-color:black">Black</button></td>
+        <td><button id="white" style="background-color:white">White</button></td>
       </tr></table>
     </div>
     <canvas id="drawing-canvas"></canvas>
