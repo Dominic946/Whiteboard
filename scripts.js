@@ -14,7 +14,7 @@ function init() {
 
     // Set the canvas dimensions to the size of the window
     canvas.width = window.innerWidth-16;
-    canvas.height = window.innerHeight-55;
+    canvas.height = window.innerHeight+1000;
 
     // Add event listeners for mouse events
     canvas.addEventListener("mousedown", startDrawing);
@@ -72,6 +72,6 @@ function reset() {
   // Set the canvas dimensions to the size of the window
   if(confirm("Erase all?")){
     canvas.width = window.innerWidth-16;
-    canvas.height = window.innerHeight-55;
+    canvas.height = window.innerHeight+1000;
   }
 }
