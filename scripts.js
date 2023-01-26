@@ -40,13 +40,15 @@ function startDrawing(event) {
     context.beginPath();
 
     // Set the starting point of the path
-    context.moveTo(event.clientX, event.clientY);
+    const rect = canvas.getBoundingClientRect()
+    context.moveTo(event.clientX - rect.left, event.clientY - rect.top);
 }
 
 function draw(event) {
     if (drawing) {
         // Add a line to the current path
-        context.lineTo(event.clientX, event.clientY);
+        const rect = canvas.getBoundingClientRect()
+        context.lineTo(event.clientX - rect.left, event.clientY - rect.top);
 
         // Set the line width and color
         context.lineWidth = penSize;
